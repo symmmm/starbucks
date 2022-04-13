@@ -1,0 +1,680 @@
+/* VISUAL */
+.visual{  
+  margin-top: 120px; /*header (=header.inner)의 크기*/  
+  background-image: url(./../images/visual_bg.jpg);
+  background-position: center;
+}
+.visual .inner{  /*상위에 지정한 inner에 영향을 받는다*/    
+  height: 646px;
+  /* background-color: orange; */
+}
+
+.visual .title{
+  position: absolute;
+  top:88px;
+  left:-10px;
+}
+
+/* btn 공통*/
+.visual .title .btn{
+  position: absolute;
+  top: 259px;
+  left: 173px;
+} 
+
+.visual .cup1.image{
+  position: absolute;
+  bottom: 0;
+  right: -47px;
+}
+
+.visual .cup1.text{
+  position: absolute;
+  top: 38px;
+  right: 171px;
+}
+.visual .cup2.image{
+  position: absolute;
+  bottom: 0;
+  right: 162px;
+}
+.visual .cup2.text{
+  position: absolute;
+  top: 321px;
+  right: 416px;
+} 
+
+.visual .spoon{
+  position: absolute;
+  bottom: 0;
+  left: 275px;
+}
+
+.visual .fade-in{
+  opacity: 0;
+}
+
+/* NOTICE */
+
+/* .notice{
+
+} */
+
+.notice .notice--line{
+  position: relative;
+}
+
+.notice .notice--line .bg--left{
+  position: absolute;
+  top:0;
+  left:0;
+  width: 50%;
+  height: 100%;
+  background-color: #333;
+}
+
+.notice .notice--line .bg--right{
+  position: absolute;
+  top:0;
+  right:0;
+  width: 50%;
+  height: 100%;
+  background-color: #f6f5ef;
+}
+
+.notice .notice--line .inner{
+  height: 62px;  
+  /* border: 2px solid red; */
+  display: flex;
+}
+
+.notice .notice--line .inner__left{
+  width: 60%;
+  height: 100%;
+  background-color: #333;
+  display: flex; 
+  align-items: center;
+}
+
+.notice .notice--line .inner__left h2{
+  color:#fff;
+  font-size: 17px;
+  font-weight: 700;
+  margin-right: 20px;
+}
+/* inner__left에 align-items를 center로 하면 
+ * height가 0이 된다. 그러므로 별도 지정이 필요하다. 
+ */
+.notice .notice--line .inner__left .swiper{
+  /* background-color: orange; */
+  height: 62px;
+  flex-grow:1;
+}
+
+.notice .notice--line .inner__left .swiper-slide{
+  height: 62px;
+  display: flex;
+  align-items: center;
+}
+
+.notice .notice--line .inner__left .swiper-slide a{
+  color:#fff;
+}
+
+.notice .notice--line .inner__left .notice--line__more{
+  width: 62px;
+  height: 62px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.notice .notice--line .inner__left .notice--line__more .material-icons{
+  color: #fff;
+  font-size: 24px;
+}
+
+.notice .notice--line .inner__right{
+  width: 40%;
+  height: 100%;
+  display: flex;  
+  justify-content: flex-end;
+  align-items: center;
+  /* background-color: orange; */
+}
+
+.notice .notice--line .inner__right h2{
+  font-size: 24px;  
+  font-weight: 700;   
+}
+.notice .notice--line .inner__right .toggle--promotion{
+  width: 62px;
+  height: 62px;
+  cursor: pointer;
+  display:flex;
+  justify-content: center;
+  align-items: center;
+}
+.notice .notice--line .inner__right .toggle--promotion .material-icons{
+  font-size: 30px;
+}
+
+.notice .promotion{
+  height: 693px;   
+  background-color: #f6f5fe;
+  position: relative;
+  transition: height .4s;
+  overflow: hidden;
+}
+
+/* 선택자 띠어 쓰면 안된다 */
+/* overflow 처리는 promotion에서 */
+.notice .promotion.hide{
+  height: 0;
+}
+
+/* width, 819x3 + 10x2 = 2477 */
+/*width의 절반 left(50%)--> 정중앙에 배치*/
+.notice .promotion .swiper{  
+  /* width: calc(819px * 3+ 20px); */
+  width: 2477px;
+  height: 553px; 
+  /* background-color: orange;      */
+  position: absolute;
+  top: 40px;
+  left: 50%;  
+  margin-left: -1238.5px;
+  /* margin-left: calc((819px * 3+ 20px)/-2);   */
+}
+
+.notice .promotion .swiper .swiper-slide{
+  opacity: 0.5;
+  transition: opacity 1s;
+  position: relative;
+}
+
+.notice .promotion .swiper .swiper-slide-active{
+  opacity: 1;
+}
+
+.notice .promotion .swiper .swiper-slide .btn{  
+  /* width: 130px; */
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right:0;
+  margin: auto;
+  cursor: pointer;  
+} 
+
+/* 이 부분 없어도 배치가 자동으로 되는 듯 */
+.notice .promotion .swiper-pagination{
+  bottom:40px;
+  left:0;
+  right: 0;
+}
+
+/*.swiper-pagination-bullet*/
+/* 강의 와 달리 여기에서 background-color를 적용하면, 원형이 안보인다.*/
+/* on 상태에만 적용한다 */
+.notice .promotion .swiper-pagination .swiper-pagination-bullet{
+  /* background-color: transparent; */
+  background-image: url("./../images/promotion_slide_pager.png");
+  width: 12px;
+  height:12px;
+  margin-right: 6px;
+  outline: none;
+}
+
+.notice .promotion .swiper-pagination .swiper-pagination-bullet:last-child{
+  margin-right: 0;
+}
+
+.notice .promotion .swiper-pagination .swiper-pagination-bullet-active{
+  background-color: transparent;
+  background-image: url("./../images/promotion_slide_pager_on.png");  
+}
+/* 현재 outline 없이도 테두리 없이 출력된다*/
+/* 다중 선택자 */
+.notice .promotion .swiper-prev,
+.notice .promotion .swiper-next{
+  width: 42px;
+  height: 42px;
+  border: 2px solid #333;
+  border-radius:50%;
+  position: absolute;
+  top: 300px;
+  z-index: 1;
+  cursor: pointer;
+  outline: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: .4s;
+}
+
+.notice .promotion .swiper-prev{
+  left: 50%;
+  margin-left: -480px;
+}
+.notice .promotion .swiper-next{
+  right: 50%;
+  margin-right: -480px;
+}
+
+.notice .promotion .swiper-prev:hover,
+.notice .promotion .swiper-next:hover{
+  background-color: #333;
+  color:#fff;
+}
+/* .notice .promotion .swiper-next{
+  
+} */
+
+
+/*rewares*/
+.rewards {
+  position:relative;
+}
+.rewards .bg-left{
+  width:50%;
+  height:100%;
+  background-color: #272727;
+  position: absolute;
+  top:0;
+  left:0;
+}
+.rewards .bg-right{
+  width:50%;
+  height:100%;
+  background-color: #d5c798;
+  position: absolute;
+  top:0;
+  right:0;
+}
+
+/* .inner 의 전역 요소에 position: relative가
+ 정의되어 있어서 별도로 할 필요가 없다.*/
+.rewards .inner{
+  background-image: url("./../images/rewards.jpg");
+  height:241px;
+}
+
+.rewards .inner .btn-group{
+  position: absolute;
+  bottom:24px;
+  right:0;
+  width: 250px; 
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.rewards .inner .btn-group .btn.sign-up{
+  margin-right: 10px;
+}
+
+.rewards .inner .btn-group .btn.sign-in{
+  width: 110px;  
+}
+
+.rewards .inner .btn-group .btn.gift{
+  margin-top: 10px;
+  flex-grow: 1;
+}
+
+/* Youtube Video */
+.youtube{
+  position:relative;
+  /* height: 400px; */
+  height: 700px;
+  /* background-color: blue; */
+  background-color: #333;
+  overflow: hidden;
+}
+.youtube .youtube__area{
+  width: 1920px;
+  background-color: orange;
+  border: 20px solid red;
+  position:absolute;
+  left:50%;
+  top: 50%;
+  margin-left: calc(1920px /(-2));
+  /* margin-left: -960px; */
+  margin-top: calc(1920px * (9/16) / (-2));
+}
+
+.youtube .youtube__area::before{
+  content:"";
+  display:block;
+  width: 100%;
+  height: 0;
+  padding-top: 56.25%; /*16:9*/
+}
+
+/* 부모요소는 youtube__area */
+#player{
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top:0;
+  left:0;
+}
+
+
+.youtube .youtube__cover{
+  background-image: url("./../images/video_cover_pattern.png");
+  background-color: rgba(0,0,0,.3); /*투명도 0.3*/
+  position:absolute;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+}
+
+
+.youtube .inner{
+  height: 700px;
+  /* background-color: blue; */
+}
+
+/* inner에는 전역요소에 position 정의되어 있다*/
+.youtube .floating1{
+  position: absolute;
+  top:50px;
+  left:0;
+}
+
+.youtube .floating2{
+  position: absolute;
+  top:350px;
+  left:150px;
+}
+
+/* .youtube .floating3{
+  position: absolute;
+  bottom: -200px;
+  right:0;
+} */
+
+/* SEASON PRODUCT */
+.season-product{
+  background-image: url("./../images/season_product_bg.jpg");
+}
+
+.season-product .inner{
+  height: 400px;
+}
+
+.season-product .floating3{
+  position: absolute;
+  /* bottom: -200px; */
+  top: -200px;
+  right:0;
+}
+
+.season-product .inner .text-group{
+  position:absolute;
+  top:110px;
+  right:100px;
+}
+
+.season-product .inner .text-group .title{
+  margin-bottom: 10px;
+}
+
+.season-product .inner .text-group .description{
+ margin-bottom: 15px; 
+}
+
+/* .season-product .inner .text-group .more{
+  
+} */
+
+/* Reserve Coffee */
+.reserve-coffee{
+  background-image: url("./../images/reserve_bg.jpg");
+}
+
+.reserve-coffee .inner{
+  height: 400px;
+}
+
+.reserve-coffee .inner .logo{
+  position:absolute;
+  toP:110px;
+  left:0;  
+}
+
+.reserve-coffee .inner .text-group{
+  position: absolute;
+  top:124px;
+  left:208px;
+}
+
+.reserve-coffee .inner .product{
+  position: absolute;
+  top:0;
+  right:0;
+
+
+  
+}
+
+/* pick your favorite */
+.pick-your-favorite{
+  background-image: url("./../images/favorite_bg.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: fixed;
+  background-size:cover;
+}
+.pick-your-favorite .inner{
+  padding: 110px 0;  
+}
+.pick-your-favorite .text-group{
+  /* background-color: orange; */
+  margin-left: 100px;
+  width: 362px;
+  display:flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+}
+
+.pick-your-favorite .text-group .title{
+  margin-bottom: 40px;
+}
+
+.pick-your-favorite .text-group .description{
+  margin-bottom: 40px;
+}
+
+
+/* Reserve-Store */
+/* 패럴랙스(parallax): parallax는 시차라는 뜻으로 천문학에서 
+사용하는 용어입니다. 즉 멀리 있는 물체는 천천히 움직이고, 
+가까이 있는 물체는 빨리 움직이는 현상을 의미하죠. 
+이 현상을 이용하면 입체감, 실체감을 높여서 보다 
+인상적인 디자인을 할 수 있습니다.  */
+.reserve-store{
+  background-image: url("./../images/reserve_store_bg.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: fixed; /*parallax scrolling*/
+  background-size:cover;
+}
+
+.reserve-store .inner{
+  height: 600px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.reserve-store .medal{
+  width:334px;
+  height:334px;
+  perspective: 600px;
+}
+
+.reserve-store .medal .front,
+.reserve-store .medal .back{
+  position: absolute; 
+  width:334px;
+  height:334px;
+  backface-visibility: hidden;
+  transition: 1s;
+}
+
+.reserve-store .medal .front{
+  /* position: absolute;  */
+  transform: rotateY(0deg);
+}
+
+.reserve-store .medal .back{
+  transform: rotateY(-180deg);
+}
+
+.reserve-store .medal:hover .front{  
+  transform: rotateY(180deg);
+}
+.reserve-store .medal:hover .back{
+  transform: rotateY(0deg);
+}
+
+/* .reserve-store .medal .front:hover{  
+  transform: rotateY(180deg);
+}
+.reserve-store .medal .back:hover{
+  transform: rotateY(0deg);
+} */
+
+
+.reserve-store .medal .back .btn{
+  /* width: 130px; */
+  position: absolute;
+  top:240px;
+  left:0;
+  right:0;
+  margin: auto;
+}
+
+/* FIND STORE  */
+.find-store{
+  background-image: url("./../images/find_store_bg.jpg");
+}
+
+.find-store .inner{
+  height: 400px;
+}
+
+.find-store .texture1{
+  position:absolute;
+  top:0;
+  left:400px;
+}
+
+.find-store .texture2{
+  position:absolute;
+  bottom:0;
+  right:0;
+}
+
+.find-store .picture{
+  position:absolute;
+  border-radius: 50%;
+  box-shadow: 2px 2px 8px rgba(0,0,0,.5);
+}
+
+.find-store .picture1{
+  /* position:absolute; */
+  top: -60px;
+  left: 0;
+}
+
+.find-store .picture2{
+  /* position:absolute; */
+  top: 150px;
+  left: 250px;
+}
+
+.find-store .text-group{
+    position:absolute;
+    top: 120px;
+    left: 550px;
+}
+
+.find-store .text-group .title{
+  margin-bottom: 20px;
+}
+
+.find-store .text-group .description{
+  margin-bottom: 20px;
+}
+
+/* AWARDS  */
+.awards{
+  background-color:#272727;
+}
+
+.awards .inner{
+  padding: 40px 0;
+}
+
+.awards .inner .swiper{
+  width: 100%;
+  height: 40px;
+}
+
+.awards .swiper-prev,
+.awards .swiper-next{
+  width:42px;
+  height:42px;
+  border: 2px solid #fff;
+  border-radius: 50%;
+  outline: none;
+  color:#fff;
+  opacity:.3;
+  cursor:pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  position: absolute;
+  top:0;
+  bottom: 0;
+  margin: auto;
+}
+
+.awards .swiper-prev:hover,
+.awards .swiper-next:hover{
+  background-color: #fff;
+  color:#333;
+}
+
+.awards .swiper-prev{
+  left: -100px;
+}
+
+.awards .swiper-next{
+  right: -100px;
+}
+
+
+
+/* To-TOP  */
+#to-top{
+  width:42px;
+  height: 42px;
+  background-color: #333;
+  color:#fff;
+  border: 2px solid #fff;
+  border-radius: 10px;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position:fixed;
+  bottom:30px;
+  right:30px;
+  z-index: 9;
+}
